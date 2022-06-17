@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_blue"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/clouds_bg" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/welcomeTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome"
+                android:textColor="@color/black"
+                android:textSize="48sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.1" />
+
+            <TextView
+                android:id="@+id/welcomeSubtitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Please enter your location and press continue"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcomeTitleTextView" />
+
+            <TextView
+                android:id="@+id/welcomeLocationTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Location (ZIP or city)"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcomeSubtitleTextView" />
+
+            <TextView
+                android:id="@+id/welcomeUnitTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Units (C or F)"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcomeLocationTextLayout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/welcomeLocationTextLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/blue"
+                app:boxStrokeErrorColor="@color/design_default_color_error"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcomeLocationTextView">
+                <AutoCompleteTextView
+                    android:id="@+id/welcomeLocationTextEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:paddingStart="16dp"
+                    android:singleLine="true"/>
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/welcomeLocationTextEdit"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:imeOptions="actionDone"-->
+<!--                    android:inputType="textPostalAddress" />-->
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--    <com.google.android.material.textfield.TextInputLayout-->
+            <!--        android:id="@+id/welcomeUnitsTextLayout"-->
+            <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+            <!--        android:layout_width="268dp"-->
+            <!--        android:layout_height="51dp"-->
+            <!--        app:boxStrokeColor="@color/teal_700"-->
+            <!--        app:boxStrokeErrorColor="@color/black"-->
+            <!--        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--        app:layout_constraintStart_toStartOf="parent"-->
+            <!--        app:layout_constraintTop_toBottomOf="@+id/welcomeUnitTextView">-->
+
+
+            <Spinner
+                android:id="@+id/spinner"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="268dp"
+                android:layout_height="51dp"
+                android:layout_alignParentTop="true"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/teal_700"
+                app:boxStrokeErrorColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcomeUnitTextView" />
+            <!--        <com.google.android.material.textfield.TextInputEditText-->
+            <!--            android:id="@+id/welcomeUnitsTextEdit"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content" />-->
+
+            <!--    </com.google.android.material.textfield.TextInputLayout>-->
+            <LinearLayout
+                android:id="@+id/loadingUI"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Resolving location..."
+                    android:textAlignment="center"
+                    android:textColor="@color/dark_blue" />
+
+                <ProgressBar
+                    android:id="@+id/loadingProgressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/welcomeContinueButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="@color/blue"
+                android:text="Continue"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinner" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

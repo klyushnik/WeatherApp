@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_blue"
+    tools:context=".ForecastActivity">
+
+    <ImageView
+        android:id="@+id/forecastBackgroundImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/clouds_bg" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:elevation="10dp"
+            app:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:elevation="10dp"
+            app:backgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_settings_24"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ScrollView
+            android:id="@+id/forecastScrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:elevation="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/currentWeatherCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:alpha="1"
+                    android:outlineProvider="none"
+                    app:cardBackgroundColor="#80FFFFFF"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="false"
+                    app:contentPadding="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        tools:gravity="center">
+
+                        <TextView
+                            android:id="@+id/forecastWetConTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="5dp"
+                            android:text="Weather Condition"
+                            android:textAlignment="center"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="34sp" />
+
+                        <TextView
+                            android:id="@+id/forecastLocTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="5dp"
+                            android:text="North Highlands, CA, US"
+                            android:textAlignment="center"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/forecastTemTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="5dp"
+                            android:text="10 C"
+                            android:textAlignment="center"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="40sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:id="@+id/forecastLowTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:elevation="5dp"
+                                android:paddingRight="25dp"
+                                android:text="Low: 8 C"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/dark_blue"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/forecastHighTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:elevation="5dp"
+                                android:paddingLeft="25dp"
+                                android:text="High: 15 C"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/dark_blue"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/hourlyCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/blue"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/currentWeatherCardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="Hourly forecast"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <com.google.android.material.divider.MaterialDivider
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@color/white" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/hourlyRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintCircleRadius="20dp"
+                            tools:listitem="@layout/hourly_weather_layout" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/dailyCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/blue"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hourlyCardView">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="7-Day forecast"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@color/white" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/dailyRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="45dp"
+                        app:layout_constraintCircleRadius="20dp"
+                        tools:listitem="@layout/daily_weather_layout" />
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <vector
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:aapt="http://schemas.android.com/aapt"
+        android:width="31dp"
+        android:height="0dp"
+        android:viewportWidth="31"
+        android:viewportHeight="0"
+        >
+
+        <group>
+
+            <clip-path
+                android:pathData="M0 0H31H0Z"
+                />
+
+            <path
+                android:pathData="M0 0H31H0Z"
+                android:strokeWidth="6"
+                android:strokeColor="#FFFFFF"
+                />
+
+        </group>
+
+    </vector>
+
+</selector>
